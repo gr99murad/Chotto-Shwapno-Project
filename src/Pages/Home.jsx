@@ -3,6 +3,9 @@ import Banner from '../Components/Home/Banner';
 import BannerBg from '../assets/bannerbg.png';
 import DescriptionStats from '../Components/Home/DescriptionStats';
 import DonationSection from '../Components/Home/DonationSection';
+import DonationCampagin from '../Components/Home/DonationCampagin';
+import DonationCategories from '../Components/Home/DonationCategories';
+import ContactSection from '../Components/Home/ContactSection';
 
 
 const Home = () => {
@@ -18,10 +21,22 @@ const Home = () => {
                   
             </div>
             
-            <div className='my-12 mt-16 max-w-7xl mx-auto '>
+            <div className='my-24 mt-16 max-w-7xl mx-auto '>
                 
                 <DonationSection></DonationSection>
+                <div className='my-24'>
+                    <DonationCampagin></DonationCampagin>
+                </div>
+                
             </div>
+            <div className='bg-[#fff5f1]'>
+                    <div className='my-24 mt-16 max-w-7xl mx-auto '>
+                        <DonationCategories></DonationCategories>
+                    </div>
+                </div>
+                <div className='my-24 mt-16 max-w-7xl mx-auto '>
+                    <ContactSection></ContactSection>
+                </div>
         </div>
         
        
