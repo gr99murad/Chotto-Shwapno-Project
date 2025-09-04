@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const campaigns = [
   {
@@ -61,8 +62,9 @@ const CampaignCard = ({ title, image, description, raised, goal }) => {
 };
 
 const DonationCampagin = () => {
+  const navigate = useNavigate(); 
   return (
-    <section className="">
+    <section id="campaign-section" className="">
       <p className="font-semibold" style={{ color: "#C24C2E" }}>Campaign</p>
       <h1 className="text-3xl md:text-5xl font-bold leading-tight mt-2">
         You Can Help Lots of People by <br />
@@ -77,6 +79,7 @@ const DonationCampagin = () => {
 
       <div className="mt-8">
         <button
+          onClick={() => navigate("/campaign")}
           className="text-white px-6 py-2 rounded hover:opacity-90"
           style={{ backgroundColor: "#C24C2E" }}
         >

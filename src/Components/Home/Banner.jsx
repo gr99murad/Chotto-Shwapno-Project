@@ -1,5 +1,5 @@
 import React from 'react';
-import banner from '../../assets/Rectangle 23.png';
+import banner from '../../assets/bannerImg.JPG';
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
 
@@ -11,7 +11,7 @@ const Banner = () => {
                 <motion.img
                     src={banner}
                     alt="Banner"
-                    className=""
+                    className="rounded-br-[100px] rounded-tr-2xl rounded-bl-2xl rounded-tl-[100px] h-[540px] w-[1440px]"
                     initial={{ x: -100, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}

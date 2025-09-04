@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .bg-grid {
+  background-image: 
+    repeating-linear-gradient(
+      to right,
+      rgba(194, 72, 36, 0.07) 0px,
+      rgba(194, 72, 36, 0.07) 1px,
+      transparent 1px,
+      transparent 20px, /* gap from first line */
+      rgba(194, 72, 36, 0.07) 21px,
+      rgba(194, 72, 36, 0.07) 22px,
+      transparent 22px,
+      transparent 100px  /* full repeat length */
+    );
+  background-blend-mode: overlay;
+}
+
+ .bg-gradient {
+    background-image: linear-gradient(to bottom right, #fceae6, #ffffff);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

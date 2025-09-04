@@ -17,8 +17,8 @@ const EmergencyContacts = () => {
       icon: <FaUserShield />,
       title: 'Police',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      link: '#police',
+        'Contact nearby police stations quickly in case of emergency. Find location and call now.',
+      link: '/safeNow/police',
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ const EmergencyContacts = () => {
       title: 'Ambulance',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      link: '#ambulance',
+      link: '/safeNow/ambulance',
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ const EmergencyContacts = () => {
       title: 'Fire Service',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      link: '#fire-service',
+      link: '/safeNow/fire-service',
     },
     {
       id: 4,
@@ -42,7 +42,7 @@ const EmergencyContacts = () => {
       title: 'Volunteer Help Line',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      link: '#volunteer-helpline',
+      link: '/safeNow/volunteer-helpline',
     },
   ];
 

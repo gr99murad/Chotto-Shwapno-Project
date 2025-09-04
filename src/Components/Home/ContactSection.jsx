@@ -1,10 +1,12 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { FaPaperPlane } from 'react-icons/fa';
 
 const ContactSection = () => {
   return (
-    <section className="py-16 grid grid-cols-1 md:grid-cols-2 gap-4">
+    <section
+      id="contact-section" 
+      className="py-16 grid grid-cols-1 md:grid-cols-2 gap-4"
+    >
       {/* Left Side - Form */}
       <div className="bg-[#fff5f1] border border-[#c24c2e3b] rounded-xl p-6 md:p-10 w-full md:max-w-md shadow-sm">
         <h2 className="text-4xl md:text-5xl font-bold leading-tight">
