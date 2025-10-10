@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
-import axiosInstance from "../utils/axiosInstance";
+import axiosInstance from "../utils/axiosInstance"; // assuming axiosInstance is set up
 import logo from "../assets/logo.png";
 import bg_banner from "../assets/bannerbg.png";
+import toast from "react-hot-toast";
+
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -48,16 +50,21 @@ const Register = () => {
       payload.append("Image", Image);
     }
 
-    // ✅ DEBUG: Confirm FormData contents
+    // DEBUG: Confirm FormData contents
     console.log("FormData being sent:");
     for (let pair of payload.entries()) {
       console.log(`${pair[0]}: ${pair[1]}`);
     }
 
     try {
-      await axiosInstance.post("/auth/register", payload);
-      alert("Registration successful!");
-      navigate("/auth/login");
+      // Make the POST request to the backend
+      const response = await axiosInstance.post("/auth/register", payload);
+      
+      if (response.status === 200 || response.status === 201) {
+  toast.success("🎉 Registration successful!");
+  navigate("/auth/login");
+}
+
     } catch (error) {
       console.error("Registration error:", error.response?.data || error.message);
       alert(error.response?.data?.message || "Registration failed");
@@ -71,10 +78,10 @@ const Register = () => {
     >
       <form
         onSubmit={handleSubmit}
-        className="py-8 px-4 max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 overflow-hidden"
+        className="py-8 px-4 overflow-hidden"
         encType="multipart/form-data"
       >
-        <div className="p-8 md:p-10 bg-white/95 rounded-3xl border border-bg_primary shadow-lg">
+        <div className="p-16 md:p-10 bg-white/95 rounded-3xl border border-bg_primary shadow-lg">
           <div className="w-14 h-14 mb-6">
             <img src={logo} alt="Logo" className="w-full h-full object-contain" />
           </div>
@@ -197,13 +204,7 @@ const Register = () => {
           </p>
         </div>
 
-        <div className="hidden md:block">
-          <img
-            src="https://i.ibb.co/xSnv2BVx/Group-407.png"
-            alt="Visual"
-            className="w-full h-full object-cover rounded-3xl border border-bg_primary"
-          />
-        </div>
+        
       </form>
     </div>
   );

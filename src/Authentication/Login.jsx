@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import axiosInstance from "../utils/axiosInstance";
 import logo from "../assets/logo.png";
 import bg_banner from "../assets/bannerbg.png";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -26,13 +27,24 @@ const Login = () => {
     e.preventDefault();
 
     try {
+      // Send email and password to the backend login endpoint
       const res = await axiosInstance.post("/auth/login", formData);
-      alert("Login successful!");
-      // Store token/user info if needed: localStorage.setItem("token", res.data.token);
-      navigate("/"); // or navigate("/dashboard");
+      
+      // Assuming the backend sends a token on successful login
+      const { token, user } = res.data;
+
+      // Store the token and user data in localStorage
+      localStorage.setItem("token", token);
+      localStorage.setItem("user", JSON.stringify(user));
+
+      // Optional: You can store user info in a global state like Context API or Redux for app-wide access
+      toast.success("Login successful!");
+      
+      // Redirect to the homepage or dashboard after successful login
+      navigate("/"); // Redirect to home
     } catch (error) {
       console.error("Login error:", error.response?.data || error.message);
-      alert(error.response?.data?.message || "Login failed");
+      toast.error(error.response?.data?.message || "Login failed");
     }
   };
 
@@ -43,7 +55,7 @@ const Login = () => {
     >
       <form
         onSubmit={handleSubmit}
-        className="py-8 px-4 max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 overflow-hidden"
+        className="py-8 px-4 overflow-hidden"
       >
         {/* Left Form Section */}
         <div className="p-8 md:p-12 bg-white/90 rounded-3xl border border-bg_primary shadow-lg">
@@ -134,14 +146,6 @@ const Login = () => {
           </p>
         </div>
 
-        {/* Right Image Section */}
-        <div className="hidden md:block">
-          <img
-            src="https://i.ibb.co/xSnv2BVx/Group-407.png"
-            alt="Visual"
-            className="w-full h-full object-cover rounded-3xl border border-bg_primary"
-          />
-        </div>
       </form>
     </div>
   );

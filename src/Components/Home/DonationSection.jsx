@@ -1,9 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // navigation এর জন্য
-import DonationImg1 from "../../assets/IMG_20250125_095057.jpg";
-import DonationImg2 from "../../assets/IMG_20250125_095059.jpg";
-import DonationImg3 from "../../assets/IMG_20250125_101139.jpg";
-import DonationImg4 from "../../assets/IMG_20250125_101211.jpg";
+import { useNavigate } from "react-router-dom";
+import DonationImg1 from "../../assets/homeAbout1.jpg";
+import DonationImg2 from "../../assets/homeAbout2.jpg";
+import DonationImg3 from "../../assets/homeAbout3.jpg";
+import DonationImg4 from "../../assets/homeAbout4.jpg";
 
 const DonationSection = () => {
   const navigate = useNavigate();

@@ -7,9 +7,40 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [visible, setVisible] = useState(true);
   const [activeSection, setActiveSection] = useState("");
+  const [user, setUser] = useState(null);  // Store the logged-in user state
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Check if the user is logged in (via localStorage) when the Navbar mounts
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+
+    if (storedUser) {
+      try {
+        setUser(JSON.parse(storedUser));  // Parse and set user if found
+      } catch (error) {
+        console.error("Failed to parse user data from localStorage:", error);
+        setUser(null);  // In case of error, reset user state
+      }
+    } else {
+      setUser(null);  // No user found in localStorage
+    }
+  }, []); // Empty dependency array means this will run only once when the component mounts
+
+  // Logout function that clears session data and redirects to login
+  const handleLogout = () => {
+    // Clear the user and token from localStorage
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+
+    // Reset the user state
+    setUser(null);
+
+    // Navigate to the login page
+    navigate("/auth/login");
+  };
+
+  // Handle scroll events for active section highlighting
   const handleScroll = () => {
     if (window.scrollY > lastScrollY) setVisible(false);
     else setVisible(true);
@@ -62,45 +93,35 @@ const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink to="/" className={({ isActive }) => isActive && !["about","campaign","categories","contact"].includes(activeSection) ? "text-[#C24C2E] font-bold" : "hover:text-[#C24C2E]"}>
-          Home
-        </NavLink>
+        <NavLink to="/" className={({ isActive }) => isActive && !["about", "campaign", "categories", "contact"].includes(activeSection) ? "text-[#C24C2E] font-bold" : "hover:text-[#C24C2E]"}>Home</NavLink>
       </li>
       <li>
-        <button onClick={() => scrollToSection("donation-section")} className={activeSection === "about" ? "text-[#C24C2E] font-bold" : "hover:text-[#C24C2E]"}>
-          About Us
-        </button>
+        <button onClick={() => scrollToSection("donation-section")} className={activeSection === "about" ? "text-[#C24C2E] font-bold" : "hover:text-[#C24C2E]"}>About Us</button>
       </li>
       <li>
-        <button onClick={() => scrollToSection("campaign-section")} className={activeSection === "campaign" ? "text-[#C24C2E] font-bold" : "hover:text-[#C24C2E]"}>
-          Campaign
-        </button>
+        <button onClick={() => scrollToSection("campaign-section")} className={activeSection === "campaign" ? "text-[#C24C2E] font-bold" : "hover:text-[#C24C2E]"}>Campaign</button>
       </li>
       <li>
-        <button onClick={() => scrollToSection("categories-section")} className={activeSection === "categories" ? "text-[#C24C2E] font-bold" : "hover:text-[#C24C2E]"}>
-          Categories
-        </button>
+        <button onClick={() => scrollToSection("categories-section")} className={activeSection === "categories" ? "text-[#C24C2E] font-bold" : "hover:text-[#C24C2E]"}>Categories</button>
       </li>
       <li>
-        <NavLink to="/education" className={({ isActive }) => isActive ? "text-[#C24C2E] font-bold" : "hover:text-[#C24C2E]"}>
-          Education
-        </NavLink>
+        <NavLink to="/education" className={({ isActive }) => isActive ? "text-[#C24C2E] font-bold" : "hover:text-[#C24C2E]"}>Education</NavLink>
       </li>
       <li>
-        <NavLink to="/safeNow" className={({ isActive }) => isActive ? "text-[#C24C2E] font-bold" : "hover:text-[#C24C2E]"}>
-          Safe Now
-        </NavLink>
+        <NavLink to="/safeNow" className={({ isActive }) => isActive ? "text-[#C24C2E] font-bold" : "hover:text-[#C24C2E]"}>Safe Now</NavLink>
       </li>
       <li>
-        <button onClick={() => scrollToSection("contact-section")} className={activeSection === "contact" ? "text-[#C24C2E] font-bold" : "hover:text-[#C24C2E]"}>
-          Contact
-        </button>
+        <button onClick={() => scrollToSection("contact-section")} className={activeSection === "contact" ? "text-[#C24C2E] font-bold" : "hover:text-[#C24C2E]"}>Contact</button>
       </li>
-      <li>
-        <NavLink to="/auth/login" className={({ isActive }) => isActive ? "text-[#C24C2E] font-bold" : "hover:text-[#C24C2E]"}>
-          Login
-        </NavLink>
-      </li>
+      {!user ? (
+        <li>
+          <NavLink to="/auth/login" className={({ isActive }) => isActive ? "text-[#C24C2E] font-bold" : "hover:text-[#C24C2E]"}>Login</NavLink>
+        </li>
+      ) : (
+        <li>
+          <button onClick={handleLogout} className="hover:text-[#C24C2E] font-bold">Logout</button>
+        </li>
+      )}
     </>
   );
 

@@ -12,6 +12,7 @@ import FireService from "../Pages/EmergencyContacts/FireService";
 import NotFound from "../Pages/NotFound";
 import CampaignBlog from "../Components/Campaign_Blog/CampaignBlog";
 import SubCategories from "../Components/Sub_Categories/SubCategories";
+import OurAdvisors from "../Components/Advisors/OurAdvisors";
 
 
 const router = createBrowserRouter([
@@ -55,11 +56,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/safeNow/police",
-    element: <Police />,
+    element: <Police></Police>,
   },
   {
     path: "/safeNow/ambulance",
     element: <Ambulance />,
+  },
+  {
+    path: "/ourAdvisors",
+    element: <OurAdvisors></OurAdvisors>,
   },
   {
     path: "/safeNow/fire-service",
