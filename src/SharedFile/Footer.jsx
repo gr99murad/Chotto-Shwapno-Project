@@ -1,6 +1,6 @@
 import React from 'react';
 
-import logo from '../assets/logo.png';
+import logo from '../assets/logo (1).png';
 import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
@@ -37,7 +37,6 @@ const Footer = () => {
                             <li><a href="/education" className="hover:text-[#e06c4b]">Education</a></li>
                             <li><a href="/categories" className="hover:text-[#e06c4b]">Categories</a></li>
                             <li><a href="/contact" className="hover:text-[#e06c4b]">Contact</a></li>
-                            <li><a href="/login" className="hover:text-[#e06c4b]">Login</a></li>
                             <li><a href="/donate" className="hover:text-[#e06c4b]">Donate Now</a></li>
                         </ul>
                     </div>
@@ -46,7 +45,7 @@ const Footer = () => {
                         <h4 className="text-lg font-bold mb-4 text-[#C24C2E]">Others Links</h4>
                         <ul className="space-y-2 text-sm lg:text-base">
                             <li><a href="/testimonial" className="hover:text-[#e06c4b]">Testimonial</a></li>
-                            <NavLink to="/ourAdvisors" className="hover:text-[#e06c4b]">Our Advisors</NavLink>
+                            <li> <a href="/ourAdvisors" className="hover:text-[#e06c4b]">Our Advisors</a></li>
                             <li><a href="/safe-now" className="hover:text-[#e06c4b]">Safe Now</a></li>
                             <li><a href="/find-donor" className="hover:text-[#e06c4b]">Find A Blood Donor</a></li>
                             <li><a href="/review" className="hover:text-[#e06c4b]">Review</a></li>

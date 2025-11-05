@@ -42,12 +42,18 @@ const EmergencyList = ({ type, icon }) => {
       <Navbar />
       <div className="bg-gradient mx-auto px-4 py-24 text-[#c24824]">
         <div className='flex mb-6 justify-between items-center'>
-          <h1 className="text-3xl font-bold flex items-center gap-3">
-            {icon && <img src={icon} alt="" className="w-8 h-8" />}
+          <h1 className="text-xl md:text-3xl lg:text-4xl font-bold flex items-center gap-3">
+            {icon && (
+              typeof icon === 'string' ? (
+                <img src={icon} alt="" className="w-8 h-8" />
+              ) : (
+                icon // This renders the React icon component
+              )
+            )}
             {type}
           </h1>
 
-          <div className="relative w-full max-w-sm">
+          <div className="relative md:w-full max-w-sm">
             <input
               type="text"
               placeholder="Search..."

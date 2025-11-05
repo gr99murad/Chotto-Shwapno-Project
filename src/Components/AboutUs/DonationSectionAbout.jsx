@@ -32,75 +32,72 @@ const DonationSectionAbout = () => {
   ];
 
   return (
-
     <div>
-        <section>
-      {/* central decorative line */}
-      <span className="left-1/2 w-px bg-[#ebd3ce]/70 pointer-events-none" />
+      <section>
+        {/* central decorative line */}
+        <span className="left-1/2 w-px bg-[#ebd3ce]/70 pointer-events-none" />
 
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 px-4 lg:px-8">
-        {/* Left – text */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeIn}
-          viewport={{ once: true, amount: 0.3 }}
-          className="space-y-5 max-w-2xl text-gray-700 leading-relaxed"
-        >
-          {[
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.","Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. est eros bibendum elit.",
-            "Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna.","Aliquam erat ac ipsum. Integer aliquam purus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo.",
-          ].map((txt, i) => (
-            <motion.p key={i} variants={fadeIn} custom={i}>
-              {txt}
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 px-4 lg:px-8">
+          {/* Left – text */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeIn}
+            viewport={{ once: true, amount: 0.3 }}
+            className="space-y-5 max-w-2xl text-gray-700 leading-relaxed text-justify"
+          >
+            {/* Corrected the way of mapping the paragraphs */}
+            <motion.p variants={fadeIn} custom={0}>
+              At Chotto Shwapno, we believe that no dream is too small to make a difference. Founded and led by passionate students, our organization is dedicated to empowering communities, spreading awareness, and fostering a spirit of compassion throughout Bangladesh. Our name, which translates to "A Little Dream," reflects our core philosophy: even the smallest acts of kindness can ignite powerful transformations.
             </motion.p>
-          ))}
-        </motion.div>
+            <motion.p variants={fadeIn} custom={1}>
+              Our mission is to serve humanity by proactively addressing social, educational, and environmental challenges through dedicated volunteer-driven initiatives. We are deeply committed to providing essential support and relief to underprivileged and vulnerable groups, ensuring that those who are often overlooked receive the care and attention they deserve. In addition to delivering immediate aid, we strive to promote health awareness and improve access to basic medical services, empowering communities to lead healthier and more informed lives. Recognizing the power of youth as agents of change, we actively encourage their participation in social service and community development projects, nurturing a sense of responsibility and leadership from an early age. We also believe in the transformative power of creativity and education; therefore, we focus on fostering cultural enrichment and intellectual growth among children and young adults through various programs and activities. Ultimately, our goal is to contribute to the creation of a sustainable and environmentally conscious society—one where people live in harmony with nature and where every individual has the opportunity to thrive and realize their full potential.
+            </motion.p>
+          </motion.div>
 
-        {/* Right – image area */}
-        <div className="flex gap-6 w-full">
-          {/* Hero column */}
-          <div className="flex flex-col gap-6 flex-1 min-w-[55%]">
-            <motion.img
-              src={heroTop}
-              alt="Volunteer"
-              className="w-full object-cover rounded-xl h-[260px] lg:h-[300px]"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            />
-            <motion.img
-              src={heroBottom}
-              alt="Children"
-              className="w-full object-cover rounded-xl h-[220px] lg:h-[240px]"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            />
-          </div>
-
-          {/* Slim grid column */}
-          <div className="grid grid-cols-2 grid-rows-4 gap-4 w-52">
-            {rightColumn.map((img, i) => (
+          {/* Right – image area */}
+          <div className="flex gap-6 w-full">
+            {/* Hero column */}
+            <div className="flex flex-col gap-6 flex-1 min-w-[55%]">
               <motion.img
-                key={i}
-                src={img.src}
-                alt="volunteer collage"
-                className={`object-cover w-full h-full ${img.mask}`}
-                variants={fadeIn}
-                initial="hidden"
-                whileInView="visible"
+                src={heroTop}
+                alt="Volunteer"
+                className="w-full object-cover rounded-xl h-[260px] lg:h-[300px]"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                custom={i + 6}
+                transition={{ duration: 0.8 }}
               />
-            ))}
+              <motion.img
+                src={heroBottom}
+                alt="Children"
+                className="w-full object-cover rounded-xl h-[220px] lg:h-[240px]"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              />
+            </div>
+
+            {/* Slim grid column */}
+            <div className="grid grid-cols-2 grid-rows-4 gap-4 w-52">
+              {rightColumn.map((img, i) => (
+                <motion.img
+                  key={i}
+                  src={img.src}
+                  alt="volunteer collage"
+                  className={`object-cover w-full h-full ${img.mask}`}
+                  variants={fadeIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={i + 6}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </div>
   );
 };

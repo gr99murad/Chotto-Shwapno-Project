@@ -6,23 +6,15 @@ import logo from "../assets/logo.png";
 import bg_banner from "../assets/bannerbg.png";
 import toast from "react-hot-toast";
 
-
 const Register = () => {
   const [formData, setFormData] = useState({
     Name: "",
     PhoneNumber: "",
     Email: "",
     Password: "",
-    Gender: "",
-    Location: "",
-    TeacherOrStudentID: "",
-    BloodDonor: false,
-    Volunteer: false,
-    LastBloodDonateDate: "",
   });
 
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [Image, setImage] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate();
@@ -46,9 +38,6 @@ const Register = () => {
     for (const key in formData) {
       payload.append(key, formData[key]);
     }
-    if (Image) {
-      payload.append("Image", Image);
-    }
 
     // DEBUG: Confirm FormData contents
     console.log("FormData being sent:");
@@ -61,9 +50,9 @@ const Register = () => {
       const response = await axiosInstance.post("/auth/register", payload);
       
       if (response.status === 200 || response.status === 201) {
-  toast.success("🎉 Registration successful!");
-  navigate("/auth/login");
-}
+        toast.success("🎉 Registration successful!");
+        navigate("/auth/login");
+      }
 
     } catch (error) {
       console.error("Registration error:", error.response?.data || error.message);
@@ -91,7 +80,7 @@ const Register = () => {
             Create an account to access our services and updates.
           </p>
 
-          {["Name", "PhoneNumber", "Email", "Location", "TeacherOrStudentID"].map((field) => (
+          {["Name", "PhoneNumber", "Email"].map((field) => (
             <div key={field} className="mb-4">
               <label className="block text-sm font-medium text-gray-700">{field}</label>
               <input
@@ -103,29 +92,6 @@ const Register = () => {
               />
             </div>
           ))}
-
-          <label className="block text-sm font-medium text-gray-700">Gender</label>
-          <select
-            name="Gender"
-            value={formData.Gender}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-bg_primary bg-primary-8 rounded-md mt-1 mb-4"
-          >
-            <option value="">Select Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
-
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">Last Blood Donation Date</label>
-            <input
-              type="date"
-              name="LastBloodDonateDate"
-              value={formData.LastBloodDonateDate}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border border-bg_primary bg-primary-8 rounded-md mt-1"
-            />
-          </div>
 
           <label className="block text-sm font-medium text-gray-700">Password</label>
           <div className="relative mb-4">
@@ -160,35 +126,6 @@ const Register = () => {
             </span>
           </div>
 
-          <label className="block text-sm font-medium text-gray-700">Profile Image</label>
-          <input
-            type="file"
-            onChange={(e) => setImage(e.target.files[0])}
-            accept="image/*"
-            className="mb-4"
-          />
-
-          <label className="block text-sm">
-            <input
-              type="checkbox"
-              name="BloodDonor"
-              checked={formData.BloodDonor}
-              onChange={handleChange}
-              className="mr-2"
-            />
-            Blood Donor
-          </label>
-          <label className="block text-sm mb-4">
-            <input
-              type="checkbox"
-              name="Volunteer"
-              checked={formData.Volunteer}
-              onChange={handleChange}
-              className="mr-2"
-            />
-            Volunteer
-          </label>
-
           <button
             type="submit"
             className="w-full bg-bg_primary text-white py-2 rounded-md hover:opacity-90 font-semibold"
@@ -203,8 +140,6 @@ const Register = () => {
             </NavLink>
           </p>
         </div>
-
-        
       </form>
     </div>
   );

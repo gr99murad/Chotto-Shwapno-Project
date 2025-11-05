@@ -11,11 +11,15 @@ const SafeNow = () => {
                 <Navbar></Navbar>
             </div>
             <div className="py-12 bg-gradient-to-br from-[#fbeeee] to-white">
-            <div className='max-w-7xl mx-auto py-12'>
+            <div className='max-w-7xl mx-4 md:mx-auto py-12'>
                 <h1 className='font-bold text-5xl text-bg_primary'>Save The Children</h1>
             </div>
-            <StopChildMarriage></StopChildMarriage>
-            <EmergencyContacts></EmergencyContacts>
+            <div className='mx-4 md:mx-auto'>
+                <StopChildMarriage></StopChildMarriage>
+                <EmergencyContacts></EmergencyContacts>
+
+            </div>
+            
             
         </div>
         </div>

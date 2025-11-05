@@ -4,28 +4,28 @@ import { useNavigate } from 'react-router-dom';
 const campaigns = [
   {
     id: 1,
-    title: "Health response and kids",
+    title: "Education for Underprivileged Children",
     image: "https://i.ibb.co/vCTnFBpC/IMG-20250125-095057.jpg",
     description:
-      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia conseq.....",
+      "Education is often called the key to a better life, yet thousands of children are still deprived......",
     raised: 75890,
     goal: 80000,
   },
   {
     id: 2,
-    title: "Gift an education...Make a life !",
+    title: "Health and Blood Donation Campaigns",
     image: "https://i.ibb.co/PszFxV3T/IMG-20250125-101211.jpg",
     description:
-      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia conseq.....",
+      "Good health is one of the greatest blessings in life, yet for many people in Bangladesh even the most basic.....",
     raised: 75890,
     goal: 80000,
   },
   {
     id: 3,
-    title: "Gift an education...Make a life !",
+    title: "Seasonal and Emergency Support",
     image: "https://i.ibb.co/PszFxV3T/IMG-20250125-101211.jpg",
     description:
-      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia conseq.....",
+      "In every society, the poorest and most vulnerable are the ones who suffer the most ....",
     raised: 75890,
     goal: 80000,
   },
@@ -46,9 +46,9 @@ const CampaignCard = ({ title, image, description, raised, goal }) => {
         ></div>
       </div>
       <div className="flex items-center justify-between text-sm mt-2">
-        <span className="font-semibold" style={{ color: "#C24C2E" }}>
-          ${raised.toLocaleString()}/<span style={{ color: "gray" }}>{goal.toLocaleString()}</span>
-        </span>
+        {/* <span className="font-semibold" style={{ color: "#C24C2E" }}>
+          ৳{raised.toLocaleString()}/<span style={{ color: "gray" }}>{goal.toLocaleString()}</span>
+        </span> */}
         <span className="text-gray-700">{percentage}%</span>
         <button
           className="text-sm text-white px-3 py-1 rounded hover:opacity-90"

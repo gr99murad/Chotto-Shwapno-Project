@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import DonationImg1 from "../../assets/homeAbout1.jpg";
-import DonationImg2 from "../../assets/homeAbout2.jpg";
-import DonationImg3 from "../../assets/homeAbout3.jpg";
-import DonationImg4 from "../../assets/homeAbout4.jpg";
+import DonationImg1 from "../../assets/IMG_20250125_101211.jpg";
+import DonationImg2 from "../../assets/IMG_20250125_101139.jpg";
+import DonationImg3 from "../../assets/IMG_20250125_095059.jpg";
+import DonationImg4 from "../../assets/IMG_20250125_095057.jpg";
 
 const DonationSection = () => {
   const navigate = useNavigate();
@@ -11,20 +11,22 @@ const DonationSection = () => {
   return (
     <div id="donation-section" className="grid grid-cols-1 md:grid-cols-2 gap-10">
       {/* Images */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-        <div className="aspect-square overflow-hidden rounded-tr-[60%] h-56">
+      <div className="grid grid-cols-2 gap-2 md:gap-4">
+        <div className="aspect-square overflow-hidden rounded-tr-[60%]">
           <img src={DonationImg1} alt="Group 1" className="w-full h-full object-cover" />
         </div>
-        <div className="aspect-square overflow-hidden rounded-br-[60%] h-64">
-          <img src={DonationImg2} alt="Group 2" className="w-full h-full object-cover" />
+        <div className="aspect-square overflow-hidden rounded-br-[60%]">
+          <img src={DonationImg3} alt="Group 2" className="w-full h-full object-cover" />
         </div>
-        <div className="aspect-square overflow-hidden rounded-tr-[60%] h-56">
-          <img src={DonationImg3} alt="Group 3" className="w-full h-full object-cover" />
+        <div className="aspect-square overflow-hidden rounded-tr-[60%]">
+          <img src={DonationImg4} alt="Group 3" className="w-full h-full object-cover" />
         </div>
-        <div className="aspect-square overflow-hidden rounded-[100%] h-56">
-          <img src={DonationImg4} alt="Group 4" className="w-full h-full object-cover" />
+        <div className="aspect-square overflow-hidden rounded-[100%]">
+          <img src={DonationImg2} alt="Group 4" className="w-full h-full object-cover" />
         </div>
       </div>
+
+      
 
       {/* Content */}
       <div>
@@ -34,20 +36,19 @@ const DonationSection = () => {
             Our Highest Ambition is to Help People
           </h2>
           <p className="mt-2 text-sm text-gray-700">
-            Our programs contribute to peace and development through volunteerism worldwide.
-            Take part in changing the lives of young people across the world.
+            Our programs contribute to peace and development through volunteerism. In Bangladesh, we empower young people to be agents of positive change in their communities.
           </p>
 
           {/* Donation Progress */}
           <div className="flex justify-between items-center mt-6 border border-red-200 rounded-lg px-4 py-3">
             <div>
               <p className="text-xs text-gray-500">Donation Goal</p>
-              <p className="text-lg font-semibold text-gray-900">$56,000</p>
+              <p className="text-lg font-semibold text-gray-900">৳100,000</p>
             </div>
             <div className="w-px bg-red-200 h-10"></div>
             <div>
               <p className="text-xs text-gray-500">Donation Raised</p>
-              <p className="text-lg font-semibold text-gray-900">$34,000</p>
+              <p className="text-lg font-semibold text-gray-900">৳10,000</p>
             </div>
           </div>
 

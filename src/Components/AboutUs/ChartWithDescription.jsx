@@ -51,20 +51,11 @@ const ChartWithDescription = () => {
       </div>
 
       <div className="mt-8 text-sm text-gray-700 leading-relaxed max-w-5xl mx-auto">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <p className="mt-2">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
-        <p className="mt-2">
-          Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra.
-        </p>
-        <p className="mt-2">
-          Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna.
-        </p>
-        <p className="mt-2">
-          Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed.
+        <h1 className='font-thin text-3xl'>Join Us in Making Dreams Come True</h1>
+        <p className='mt-4 '>Chotto Shwapno is more than an organization; it’s a family of dreamers and doers. Whether you want to volunteer, donate, or simply learn more, there is a place for you here. Together, we can turn small dreams into lasting change—one smile, one tree, one life at a time. </p>
+
+        <p className="mt-2 text-xl">
+          Get in touch with us today and become part of the Chotto Shwapno journey!
         </p>
       </div>
     </div>

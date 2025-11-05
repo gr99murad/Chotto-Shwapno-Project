@@ -9,7 +9,6 @@ import Img5 from "../../assets/DSC_9114.JPG";
 import Img6 from "../../assets/DSC_9047.JPG";
 import Img7 from "../../assets/DSC_9033.JPG";
 
-
 const fade = {
   hidden: { opacity: 0, y: 40 },
   visible: (i = 0) => ({
@@ -111,16 +110,11 @@ const AwardSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="py-44 space-y-4 text-gray-700 leading-relaxed max-w-2xl"
+          className="py-24 space-y-4 text-gray-700 leading-relaxed max-w-2xl text-justify"
         >
-          {[
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-            "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit.",
-            "Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna.",
-            "Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo.",
+          {[ 
+            "At Chotto Shwapno, our work encompasses a wide range of impactful activities tailored to address the diverse needs of the communities we serve. We organize health campaigns that offer free checkups and awareness sessions on common conditions such as diabetes and hypertension, helping people take control of their well-being. During the colder months, we distribute winter clothes to street children, the elderly, and families struggling to stay warm, ensuring no one is left vulnerable to the harsh weather. Our commitment to education and culture shines through programs like painting competitions, story reading sessions, and seminars designed to foster creativity, critical thinking, and a love for learning among children and young adults. When natural disasters strike, we provide rapid relief by delivering food, medicine, shelter, and assistance with rebuilding efforts. We actively promote environmental stewardship through tree planting drives aimed at creating a greener, healthier planet. In addition, we support public service initiatives such as assisting university admission candidates during exams and running year-round voluntary blood donation programs. Throughout the COVID-19 pandemic, we have been dedicated to educating communities on safety practices and distributing protective supplies like masks and sanitizers to help prevent the spread of the virus. Together, these efforts embody our holistic approach to community service and empowerment.",
+            "Through our collective efforts, we have touched the lives of thousands—bringing health, hope, and happiness to those who need it most. Our volunteers gain invaluable experience and develop a lifelong commitment to social responsibility, creating a cycle of giving and growth that benefits society as a whole."
           ].map((p, i) => (
             <motion.p key={i} variants={fade} custom={i + 7}>
               {p}

@@ -3,26 +3,27 @@ import React from 'react';
 const testimonials = [
   {
     title: 'Kindness',
-    text: 'Lorem Ipsum is simply dummy text  Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text  Lorem Ipsum is simply dummy text Lorem Ipsum is',
+    text: '“At Chotto Shwapno, we believe that kindness is the key to building a compassionate society. It’s not just about being nice, it’s about spreading love, support, and warmth to others in their time of need. Whether through a simple smile, lending a hand, or showing empathy, kindness has the power to transform lives and create a better community.”',
     name: 'John Doe',
-    role: 'Senior Gardener Farmer',
+    role: 'Volunteer Coordinator',
     image: 'https://i.ibb.co/6RWhvYHY/jhon-doe.jpg',
   },
   {
     title: 'Humanity',
-    text: 'Lorem Ipsum is simply dummy text  Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text  Lorem Ipsum is simply dummy text Lorem Ipsum is',
+    text: '“Humanity is at the heart of everything we do at Chotto Shwapno. It’s about standing together, offering help in times of need, and being there for each other, no matter the situation. Our work promotes human connection, support, and kindness, helping communities thrive through compassion and care.”',
     name: 'Jack Harry',
-    role: 'Senior Gardener Farmer',
+    role: 'Program Manager',
     image: 'https://i.ibb.co/PsGcmY2z/0015-harry.jpg',
   },
   {
     title: 'Ethics & Morality',
-    text: 'Lorem Ipsum is simply dummy text  Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text  Lorem Ipsum is simply dummy text Lorem Ipsum is',
+    text: '“Chotto Shwapno has always stood firm on ethical values and morality, ensuring that every action we take is rooted in fairness, integrity, and justice. By adhering to strong ethical principles, we are committed to creating a just world where respect, dignity, and responsibility are integral to our interactions with each other.”',
     name: 'Sakib Hossain',
-    role: 'Senior Gardener Farmer',
+    role: 'Community Outreach Specialist',
     image: 'https://i.ibb.co/CG9B1Jb/0x0.webp',
   },
 ];
+
 
 const TestimonialSection = () => {
   return (

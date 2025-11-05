@@ -13,7 +13,27 @@ import NotFound from "../Pages/NotFound";
 import CampaignBlog from "../Components/Campaign_Blog/CampaignBlog";
 import SubCategories from "../Components/Sub_Categories/SubCategories";
 import OurAdvisors from "../Components/Advisors/OurAdvisors";
+import AdminPanel from "../AdminPanel/Components/AdminPanel";
+import AdminHomePage from "../AdminPanel/Pages/AdminHomePage";
+import AdminAboutPage from "../AdminPanel/Pages/AdminAboutPage";
+import AdminCampaignPage from "../AdminPanel/Pages/AdminCampaignPage";
+import AdminBloodDonorPage from "../AdminPanel/Pages/AdminBloodDonorPage";
+import AdminEmergencyPage from "../AdminPanel/Pages/AdminEmergencyPage";
+import AdminAdvisorPage from "../AdminPanel/Pages/AdminAdvisorPage";
+import Profile from "../Pages/Profile";
+import EmergencyInfo from "../Components/EmergencyInfo/EmergencyInfo";
+import Doctor from "../Pages/EmergencyContacts/Doctor";
+import Hospital from "../Pages/EmergencyContacts/Hospital";
+import Lawyer from "../Pages/EmergencyContacts/Lawyer";
+import ShoppingMall from "../Pages/EmergencyContacts/ShoppingMall";
+import TechShop from "../Pages/EmergencyContacts/TechShop";
+import PetShop from "../Pages/EmergencyContacts/PetShop";
+import BusTime from "../Pages/EmergencyContacts/BusTime";
+import TrainTime from "../Pages/EmergencyContacts/TrainTime";
 
+// Import the AdminRoute component
+import AdminRoute from "../AdminPanel/AdminRoute";
+import AdminUserManagement from "../AdminPanel/Pages/AdminUserManagement";
 
 const router = createBrowserRouter([
   {
@@ -56,24 +76,95 @@ const router = createBrowserRouter([
   },
   {
     path: "/safeNow/police",
-    element: <Police></Police>,
+    element: <Police />,
   },
   {
     path: "/safeNow/ambulance",
     element: <Ambulance />,
   },
   {
+    path: "/doctor",
+    element: <Doctor />,
+  },
+  {
+    path: "/hospital",
+    element: <Hospital />,
+  },
+  {
+    path: "/lawyer",
+    element: <Lawyer />,
+  },
+  {
+    path: "/shoppingMall",
+    element: <ShoppingMall />,
+  },
+  {
+    path: "/techShop",
+    element: <TechShop />,
+  },
+  {
+    path: "/petShop",
+    element: <PetShop />,
+  },
+  {
+    path: "/busTime",
+    element: <BusTime />,
+  },
+  {
+    path: "/trainTime",
+    element: <TrainTime />,
+  },
+  {
     path: "/ourAdvisors",
-    element: <OurAdvisors></OurAdvisors>,
+    element: <OurAdvisors />,
   },
   {
     path: "/safeNow/fire-service",
     element: <FireService />,
   },
-
   {
     path: "/category/:id",
-    element: <SubCategories></SubCategories>,
+    element: <SubCategories />,
+  },
+  {
+    path: "/admin",
+    element: <AdminRoute>  {/* Protect Admin routes */}
+      <AdminPanel />
+    </AdminRoute>,
+    children: [
+      {
+        path: "/admin/home",
+        element: <AdminHomePage />,
+      },
+      {
+        path: "/admin/userManage",
+        element: <AdminUserManagement></AdminUserManagement>,
+      },
+      {
+        path: "/admin/campaign",
+        element: <AdminCampaignPage />,
+      },
+      {
+        path: "/admin/blood-donor",
+        element: <AdminBloodDonorPage />,
+      },
+      {
+        path: "/admin/emergency-numbers",
+        element: <AdminEmergencyPage />,
+      },
+      {
+        path: "/admin/our-advisor",
+        element: <AdminAdvisorPage />,
+      },
+    ]
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
+  },
+  {
+    path: "/emergencyInfo",
+    element: <EmergencyInfo />,
   },
 ]);
 

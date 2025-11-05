@@ -28,14 +28,14 @@ const Home = () => {
         className='bg-cover bg-center min-h-screen'
         style={{ backgroundImage: `url(${BannerBg})` }}
       >
-        <div className='mt-16 max-w-7xl mx-auto'>
+        <div className='mt-14 md:mt-16 max-w-7xl mx-4 md:mx-auto'>
           <Banner />
           <DescriptionStats />
         </div>
       </div>
 
       {/* Donation Section */}
-      <div className='my-24 mt-16 max-w-7xl mx-auto'>
+      <div className='my-24 mt-16 max-w-7xl mx-4 md:mx-auto'>
         <DonationSection />
         <div className='my-24'>
           <DonationCampagin />
@@ -44,13 +44,13 @@ const Home = () => {
 
       {/* Donation Categories */}
       <div className='bg-[#fff5f1]'>
-        <div className='my-24 mt-16 max-w-7xl mx-auto'>
+        <div className='my-24 mt-16 max-w-7xl mx-4 md:mx-auto'>
           <DonationCategories />
         </div>
       </div>
 
       {/* Contact Section */}
-      <div className='my-24 mt-16 max-w-7xl mx-auto'>
+      <div className='my-24 mt-16 max-w-7xl mx-4 md:mx-auto'>
         <ContactSection></ContactSection>
       </div>
     </div>

@@ -9,7 +9,7 @@ const categories = [
     title: 'Health & Emergency Support',
     number: '01',
     description:
-      'Support health initiatives and emergency relief programs to save lives and provide timely assistance.',
+      'Dedicated to ensuring the well-being of street and underprivileged children, we provide access to essential healthcare, first aid, and immediate support during emergencies, safeguarding their health and safety.',
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const categories = [
     title: 'Environment & Sustainability',
     number: '02',
     description:
-      'Join us in preserving nature, promoting clean energy, and sustainable practices for a greener future.',
+      'Teaching children the importance of a clean and green environment. Our initiatives include tree planting, waste management education, and eco-friendly practices that empower them to protect their surroundings.',
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const categories = [
     title: 'Education Support',
     number: '03',
     description:
-      'Help provide education for underprivileged children and support literacy programs worldwide.',
+      'Transforming lives through free education. We offer basic literacy, skill development, and mentoring to street and underprivileged children, giving them the tools to build a brighter future.',
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const categories = [
     title: 'Community Service',
     number: '04',
     description:
-      'Engage in community development projects that uplift society and empower local communities.',
+      'Through active engagement and volunteerism, we foster a sense of belonging and responsibility among children. Witnessing the selfless dedication of these volunteers, the children awaken a quiet desire within themselves to uplift others, just as they have been uplifted',
   },
 ];
 
