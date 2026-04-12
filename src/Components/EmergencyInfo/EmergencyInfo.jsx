@@ -155,7 +155,7 @@ const EmergencyInfo = () => {
       title: 'Hostel',
       description:
         'Find affordable hostels and accommodation near your location.',
-      link: '/safeNow/hostel',
+      link: '/hostel',
     },
     {
       id: 17,

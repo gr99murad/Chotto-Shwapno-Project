@@ -34,6 +34,7 @@ import TrainTime from "../Pages/EmergencyContacts/TrainTime";
 // Import the AdminRoute component
 import AdminRoute from "../AdminPanel/AdminRoute";
 import AdminUserManagement from "../AdminPanel/Pages/AdminUserManagement";
+import Hostel from "../Pages/EmergencyContacts/Hostel";
 
 const router = createBrowserRouter([
   {
@@ -89,6 +90,10 @@ const router = createBrowserRouter([
   {
     path: "/hospital",
     element: <Hospital />,
+  },
+   {
+    path: "/hostel",
+    element: <Hostel></Hostel>,
   },
   {
     path: "/lawyer",
